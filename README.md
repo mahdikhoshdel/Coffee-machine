@@ -1,9 +1,7 @@
 # Coffee machine
 Back end of a coffee machine that give you 3 options of cofees:
 
-1 - espresso
-2 - latte
-3 - cappuccino
+Espresso - Latte - Cappuccino
 
 You choose everything you want it and give money to the machine.
 The machine ran some calculate method for your money process and inner resource of machine
