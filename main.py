@@ -33,9 +33,13 @@ resource = {
 
 
 def resource_calculate(choice, money):
+    
+    # default amount of milk will be 0
     milk = 0
     water = MENU[choice]['ingredients']['water']
     coffee = MENU[choice]['ingredients']['coffee']
+    
+    # if order needs milk we gonna change amount of milk
     if choice == "latte" or order == "cappuccino":
         milk = MENU[order]['ingredients']['milk']
 
@@ -43,7 +47,8 @@ def resource_calculate(choice, money):
     resource['coffee'] -= coffee
     resource['milk'] -= milk
     resource['money'] += money
-
+    
+    # check sufficient of resources
     source_lack = [key for key, val in resource.items() if val < 0]
     if source_lack:
         print(f"Not enough {source_lack} for ordering {choice}")
@@ -52,7 +57,6 @@ def resource_calculate(choice, money):
 
 
 ordering = True
-
 while ordering:
     order = input("What would you like? (espresso/latte/cappuccino):")
 
